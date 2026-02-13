@@ -1,0 +1,19 @@
+node_modules/
+.env
+*.log
+.DS_Store
+
+# Penyimpanan
+backend/src/penyimpanan/unggahan/*
+backend/src/penyimpanan/paket_terenkripsi/*
+backend/src/penyimpanan/kotak_masuk_penerima/*
+backend/src/penyimpanan/hasil_dekripsi/*
+backend/src/penyimpanan/kunci/*
+backend/src/penyimpanan/hasil_benchmark/*
+
+# Dataset (kecuali .gitkeep)
+dataset_uji/contoh/*
+!dataset_uji/contoh/.gitkeep
+
+# Keep .gitkeep files
+!.gitkeep

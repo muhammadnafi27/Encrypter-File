@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Encrypter.id - Pembagian File dengan Hybrid Cryptography</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="/src/gaya/style.css">
+  <link rel="stylesheet" href="/src/gaya/enhancements.css">
+  <link rel="stylesheet" href="/src/gaya/video-background.css">
+  <link rel="stylesheet" href="/src/gaya/alignment.css">
+  <link rel="stylesheet" href="/src/gaya/team-carousel.css">
+  <link rel="stylesheet" href="/src/gaya/responsive.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: {
+              900: '#0a0a0a',
+              800: '#121212',
+              700: '#1a1a1a',
+              600: '#242424'
+            },
+            green: {
+              neon: '#00ff88',
+              glow: '#00cc6a'
+            },
+            cyan: '#00ffff',
+            purple: '#a855f7'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Critical CSS for preventing click issues */
+    :root {
+      --color-dark-900: #0a0a0a;
+      --color-dark-800: #121212;
+      --color-dark-700: #1a1a1a;
+      --color-green-neon: #00ff88;
+      --color-green-glow: #00cc6a;
+      --color-cyan: #00ffff;
+      --color-purple: #a855f7;
+    }
+
+    /* Ensure proper stacking */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    #navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      pointer-events: auto;
+    }
+
+    #app {
+      flex: 1;
+      position: relative;
+      z-index: 10;
+      pointer-events: auto;
+    }
+
+    #footer {
+      position: relative;
+      z-index: 10;
+      pointer-events: auto;
+    }
+
+    /* All interactive elements must be clickable */
+    a,
+    button,
+    input,
+    textarea,
+    select,
+    [role="button"] {
+      cursor: pointer;
+      pointer-events: auto;
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+
+<body class="bg-dark-900 text-gray-100 font-sans">
+
+  <!-- Video Background -->
+  <div class="video-background">
+    <video autoplay loop muted playsinline>
+      <source src="/background/background.webm" type="video/webm">
+    </video>
+  </div>
+
+  <!-- Navbar - Dynamically populated -->
+  <nav id="navbar"></nav>
+
+  <!-- Main Content -->
+  <main id="app">
+    <!-- Content akan diisi oleh JavaScript router -->
+  </main>
+
+  <!-- Footer - Dynamically populated -->
+  <footer id="footer"></footer>
+
+  <!-- Loading Overlay -->
+  <div id="loading-overlay"
+    class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-[10000] flex items-center justify-center">
+    <div class="text-center">
+      <div class="spinner mb-4"></div>
+      <p id="loading-text" class="text-green-neon font-mono">Memproses...</p>
+    </div>
+  </div>
+
+  <!-- Toast Container - TOP LEFT -->
+  <div id="toast-container">
+    <!-- Toasts akan ditambahkan di sini -->
+  </div>
+
+  <!-- Scripts -->
+  <script src="/src/utils/api.js"></script>
+  <script src="/src/utils/formatter.js"></script>
+  <script src="/src/utils/router.js"></script>
+  <script src="/src/utils/ui-enhancements.js"></script>
+  <script src="/src/komponen/navbar.js"></script>
+  <script src="/src/komponen/notifikasi.js"></script>
+  <script src="/src/komponen/loading.js"></script>
+  <script src="/src/komponen/footer.js"></script>
+  <script src="/src/halaman/upload.js"></script>
+  <script src="/src/halaman/kelola-kunci.js"></script>
+  <script src="/src/halaman/benchmark.js"></script>
+  <script src="/src/halaman/simulasi-serangan.js"></script>
+  <script src="/src/halaman/tentang.js"></script>
+  <script src="/src/halaman/faq.js"></script>
+
+  <script>
+    // Initialize app
+    document.addEventListener('DOMContentLoaded', () => {
+      initNavbar();
+      initFooter();
+      initRouter();
+    });
+  </script>
+</body>
+
+</html>

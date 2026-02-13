@@ -1,0 +1,84 @@
+========================================
+   DOKUMEN RAHASIA - CONFIDENTIAL
+========================================
+
+Kepada: Tim Keamanan Siber
+Dari: Departemen IT Security
+Tanggal: 9 Februari 2026
+Subjek: Implementasi Hybrid Cryptography
+
+========================================
+
+PENDAHULUAN
+-----------
+
+Dokumen ini berisi informasi rahasia mengenai implementasi sistem enkripsi hybrid menggunakan AES-256-GCM dan RSA-OAEP untuk melindungi data sensitif perusahaan.
+
+DETAIL TEKNIS
+-------------
+
+1. ENKRIPSI SIMETRIS (AES-256-GCM)
+   - Algoritma: Advanced Encryption Standard
+   - Key Length: 256-bit
+   - Mode: Galois/Counter Mode (GCM)
+   - Keunggulan: Kecepatan tinggi untuk file besar
+   - Fitur: Authenticated encryption dengan integrity check
+
+2. ENKRIPSI ASIMETRIS (RSA-OAEP)
+   - Algoritma: Rivest-Shamir-Adleman
+   - Key Length: 2048-bit
+   - Padding: Optimal Asymmetric Encryption Padding
+   - Penggunaan: Enkripsi kunci AES
+   - Keamanan: Public/Private key pair
+
+IMPLEMENTASI
+------------
+
+Sistem hybrid cryptography bekerja dengan cara:
+
+a) Penerima generate RSA key pair (public & private key)
+b) Penerima share public key kepada pengirim
+c) Pengirim enkripsi file dengan AES-256-GCM (kunci random)
+d) Kunci AES dienkripsi dengan RSA public key penerima
+e) Paket terenkripsi dikirim (file + encrypted AES key + metadata)
+f) Penerima dekripsi AES key dengan RSA private key
+g) Penerima dekripsi file dengan AES key yang sudah didekripsi
+
+KEAMANAN
+--------
+
+- AES-256: 2^256 kombinasi kunci (praktis tidak mungkin di-brute force)
+- RSA-2048: Aman untuk 10-20 tahun ke depan
+- GCM Mode: Melindungi dari tampering dan MITM attacks
+- Perfect Forward Secrecy: Setiap file menggunakan AES key yang berbeda
+
+CATATAN PENTING
+---------------
+
+⚠️ PERINGATAN KEAMANAN:
+- Private key HARUS dijaga kerahasiaannya
+- Jangan pernah share private key kepada siapa pun
+- Backup private key di tempat yang aman
+- Jika private key bocor, generate key pair baru segera
+
+✅ BEST PRACTICES:
+- Gunakan password manager untuk menyimpan private key
+- Rotate keys secara berkala (6-12 bulan)
+- Audit log untuk setiap operasi enkripsi/dekripsi
+- Implementasi 2FA untuk akses ke private key
+
+KONTAK
+------
+
+Untuk pertanyaan lebih lanjut, hubungi:
+- Email: security@encrypter.id
+- Phone: +62 21 1234 5678
+- Emergency: +62 812 3456 7890
+
+========================================
+   END OF CONFIDENTIAL DOCUMENT
+========================================
+
+Dokumen ini dilindungi oleh Encrypter.id
+Hybrid Cryptography File Sharing System
+© 2026 All Rights Reserved

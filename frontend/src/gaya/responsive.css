@@ -1,0 +1,391 @@
+/* ============================================
+   RESPONSIVE & CLICK FIX CSS FOR ENCRYPTER.ID
+   ============================================ */
+
+/* =========== CRITICAL: POINTER EVENTS FIX =========== */
+/* Ensure all interactive elements are clickable */
+a,
+button,
+input,
+textarea,
+select,
+[role="button"],
+.btn-primary,
+.btn-secondary,
+.nav-link,
+.nav-link-mobile,
+.tab-btn,
+.card button,
+.dropzone {
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    position: relative;
+}
+
+/* Disabled state */
+button:disabled,
+.btn-primary:disabled,
+.btn-secondary:disabled {
+    cursor: not-allowed !important;
+    opacity: 0.5;
+}
+
+/* =========== BUTTON IMPROVEMENTS =========== */
+/* Make buttons easier to tap on mobile */
+.btn-primary,
+.btn-secondary,
+button:not(.toast-close) {
+    min-height: 48px;
+    min-width: 48px;
+    padding: 12px 24px;
+    font-size: 14px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(0, 255, 136, 0.2);
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Larger touch targets on mobile */
+@media (max-width: 768px) {
+
+    .btn-primary,
+    .btn-secondary {
+        min-height: 52px;
+        padding: 14px 24px;
+        font-size: 15px;
+        width: 100%;
+    }
+
+    /* Tab buttons */
+    .tab-btn {
+        padding: 14px 20px !important;
+        font-size: 14px !important;
+        min-height: 52px !important;
+    }
+
+    /* Make inline buttons full width on mobile */
+    .card button:not(.inline-btn):not(.toast-close) {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    /* Action button grids */
+    .grid button {
+        min-height: 60px;
+    }
+}
+
+/* Button hover/active states */
+button:hover:not(:disabled),
+.btn-primary:hover:not(:disabled),
+.btn-secondary:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+button:active:not(:disabled),
+.btn-primary:active:not(:disabled),
+.btn-secondary:active:not(:disabled) {
+    transform: translateY(0) scale(0.98);
+}
+
+/* =========== CARD IMPROVEMENTS =========== */
+.card {
+    padding: 16px;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    .card {
+        padding: 24px;
+    }
+}
+
+/* =========== FORM INPUT IMPROVEMENTS =========== */
+.input-field,
+textarea,
+input[type="text"],
+input[type="file"],
+select {
+    min-height: 48px;
+    padding: 12px 16px;
+    font-size: 16px;
+    /* Prevents iOS zoom on focus */
+    border-radius: 12px;
+    width: 100%;
+    background: rgba(18, 18, 18, 0.8) !important;
+    border: 2px solid rgba(0, 255, 136, 0.2) !important;
+    color: #fff !important;
+    transition: all 0.3s ease;
+}
+
+.input-field:focus,
+textarea:focus,
+input:focus,
+select:focus {
+    border-color: #00ff88 !important;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
+}
+
+@media (max-width: 768px) {
+    textarea {
+        min-height: 120px;
+    }
+}
+
+/* =========== DROPZONE IMPROVEMENTS =========== */
+.dropzone {
+    min-height: 180px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 2px dashed rgba(0, 255, 136, 0.3);
+    border-radius: 16px;
+    background: rgba(0, 255, 136, 0.02);
+    transition: all 0.3s ease;
+}
+
+.dropzone:hover {
+    border-color: #00ff88;
+    background: rgba(0, 255, 136, 0.05);
+}
+
+.dropzone.drag-over {
+    border-color: #00ff88;
+    background: rgba(0, 255, 136, 0.1);
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .dropzone {
+        min-height: 150px;
+        padding: 20px 16px;
+    }
+
+    .dropzone svg {
+        width: 48px;
+        height: 48px;
+    }
+
+    .dropzone p {
+        font-size: 14px;
+    }
+}
+
+/* =========== TABLE IMPROVEMENTS =========== */
+.table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 255, 136, 0.1);
+}
+
+@media (max-width: 768px) {
+    table {
+        min-width: 500px;
+    }
+
+    th,
+    td {
+        padding: 12px 8px;
+        font-size: 13px;
+    }
+
+    /* Make table buttons easier to tap */
+    td button {
+        min-width: 70px;
+        min-height: 40px;
+        padding: 8px 12px;
+    }
+}
+
+/* =========== TYPOGRAPHY =========== */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.75rem !important;
+        line-height: 1.2;
+    }
+
+    h2 {
+        font-size: 1.25rem !important;
+    }
+
+    h3 {
+        font-size: 1.1rem !important;
+    }
+
+    .text-5xl {
+        font-size: 1.75rem !important;
+    }
+
+    .text-4xl {
+        font-size: 1.5rem !important;
+    }
+
+    .text-3xl {
+        font-size: 1.25rem !important;
+    }
+
+    .text-2xl {
+        font-size: 1.1rem !important;
+    }
+
+    /* Paragraphs and descriptions */
+    p,
+    .text-gray-400 {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+/* =========== GRID LAYOUT IMPROVEMENTS =========== */
+@media (max-width: 640px) {
+    .grid-cols-2:not(.team-grid) {
+        grid-template-columns: 1fr !important;
+    }
+
+    .grid-cols-3 {
+        grid-template-columns: 1fr !important;
+    }
+
+    .grid-cols-4 {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-cols-4 {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* =========== SPACING =========== */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .space-y-6>*+* {
+        margin-top: 16px;
+    }
+
+    .mb-8 {
+        margin-bottom: 20px;
+    }
+
+    .mb-10 {
+        margin-bottom: 24px;
+    }
+
+    .py-8 {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+}
+
+/* =========== TEAM CARDS =========== */
+.team-card {
+    background: #121212 !important;
+    border: 2px solid rgba(0, 255, 136, 0.3) !important;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #00ff88, transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.team-card:hover {
+    border-color: #00ff88 !important;
+    box-shadow:
+        0 0 30px rgba(0, 255, 136, 0.15),
+        0 12px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
+}
+
+.team-card:hover::before {
+    opacity: 1;
+}
+
+/* Grayscale on team photos - ENFORCED */
+.team-photo {
+    filter: grayscale(100%) contrast(1.05) brightness(0.95) !important;
+    transition: filter 0.4s ease;
+}
+
+.team-card:hover .team-photo {
+    filter: grayscale(30%) contrast(1.1) brightness(1) !important;
+}
+
+/* Photo wrapper glow */
+.team-photo-wrapper {
+    border: 2px solid rgba(0, 255, 136, 0.4) !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 rgba(0, 255, 136, 0);
+}
+
+.team-card:hover .team-photo-wrapper {
+    border-color: #00ff88 !important;
+    box-shadow:
+        0 0 20px rgba(0, 255, 136, 0.5),
+        0 0 40px rgba(0, 255, 136, 0.25);
+    transform: scale(1.05);
+}
+
+/* =========== ANIMATION PREFERENCES =========== */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* =========== FOCUS STYLES =========== */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+a:focus-visible {
+    outline: 2px solid #00ff88;
+    outline-offset: 2px;
+}
+
+/* =========== SMOOTH SCROLLING =========== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* =========== UTILITY =========== */
+.break-words {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Hide scrollbar but allow scrolling */
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}

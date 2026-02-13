@@ -1,0 +1,88 @@
+/* Additional CSS for better text alignment and symmetry */
+
+/* Center text in table headers and cells */
+th.text-center,
+td.text-center {
+    text-align: center !important;
+}
+
+/* Better checkbox styling */
+input[type="checkbox"].size-checkbox {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="checkbox"].size-checkbox:checked {
+    filter: brightness(1.2);
+}
+
+/* Label hover effect for checkboxes */
+label:has(input[type="checkbox"]):hover {
+    background: rgba(0, 255, 136, 0.08);
+    border-color: rgba(0, 255, 136, 0.5) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2);
+}
+
+/* Better button spacing and alignment */
+.btn-primary,
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Ensure icons and text are properly spaced */
+.btn-primary>span,
+.btn-secondary>span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Better card header alignment */
+.card h3 {
+    line-height: 1.2;
+}
+
+/* Responsive text alignment */
+@media (max-width: 768px) {
+    .md\:text-left {
+        text-align: center !important;
+    }
+
+    .md\:justify-end {
+        justify-content: center !important;
+    }
+
+    .md\:justify-between {
+        justify-content: center !important;
+    }
+}
+
+/* Better spacing for flex containers */
+.flex.items-center.space-x-2>*,
+.flex.items-center.space-x-3>* {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Ensure gradient text is centered properly */
+.gradient-text {
+    display: inline-block;
+    text-align: center;
+}
+
+/* Better list alignment */
+ul li {
+    text-align: left;
+}
+
+/* Centered containers */
+.max-w-2xl.mx-auto,
+.max-w-4xl.mx-auto,
+.max-w-5xl.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
